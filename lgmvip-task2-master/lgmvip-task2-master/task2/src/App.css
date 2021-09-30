@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+body{
+  background-image:url("./1bg.jpg");
+  background-size: cover;
+}
+
+.App{
+  width:100%;
+  height: 100px;
+  align-items: center;
+ 
+
+}
+.Navigation{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  
+  
+}
+.Navigation img{
+  width: 300px;
+  margin-left: 20px;
+  color: white;
+}
+
+.Navigation button{
+  border:2px solid #cce016;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 20px;
+  width: 180px;
+  transition: 0.8s;
+  position: relative;
+  color: white;
+
+}
+
+button{
+  color: #152e55;
+}
+button:hover{
+  color: #fff;
+}
+
+button::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:0%;
+  background: #1a1db4;
+  z-index:-1;
+  transition: 0.8s;
+  border-radius: 0 0 50% 50%;
+}
+button:hover::before{
+  height: 100%;
+}
+
+/* card view */
+
+.user{
+  display: grid;
+  text-align: center;
+  width: 60%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin: auto;
+  justify-content: center;
+  
+}
+.card{
+  background: #054e30;
+  width: 300px;
+  height: 300px;
+  margin: 2rem;
+  margin-left: 100px;
+  padding: 1rem;
+  border-radius: 20px;
+  transition:0.5s ease;
+  cursor: pointer;
+}
+.pic{
+  display: inline-block;
+  padding: 10px;
+  background: linear-gradient(130deg,#60a9f3,#e65d5d);
+  margin:auto;
+  border-radius: 50%;
+  animation: animated-gradient 2s linear infinite;
+  background-size: 200% 200%;
+
+}
+@keyframes animated-gradient{
+  25%{
+    background-position: left bottom;
+  }
+  55%{
+    background-position: right bottom;
+  }
+  75%{
+    background-position: right top;
+  }
+  100%{
+    background-position: left top;
+  }
+}
+.pic img{
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  
+}
+.details{
+  width: auto;
+  margin-top: 20px;
+}
+
+.details h2{
+  color: red;
+  font-size: 27px;
+  font-weight: 350;
+  margin:10px;
+}
+.details h3{
+  color: white;
+  font-size: 27px;
+  font-weight: 350;
+}
+.card:hover{
+  transform: scale(1.2);
+  box-shadow:5px 5px 15px rgba(0,0,0,0.6);
+}
+
+
+@media(max-width: 700px){
+  .user{
+    display: block;
+    width: auto;
+  }
+  .card{
+    width:300px;
+    margin-left:80px;
+    
+  }
+}
